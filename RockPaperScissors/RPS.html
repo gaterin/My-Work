@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styleforrps.css" type="text/css" />
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <meta charset="UTF-8">
+    <title>RPS</title>
+</head>
+
+<body>
+    
+        <button id=butt3>NOG EEN KEER!</button>
+    
+    <div id=tijd>60</div>
+    <div id=alles2>
+         
+         </div>
+         
+         <div id=naaminv2>
+             <div id=introtext>Geef je naam op</div><br>
+             <input placeholder="20< Letters"  id=inp1 type="text" name="name" length=5 />
+         
+         <button id=butt2 >Begin!</button>
+         
+         </div>
+         
+     <div id=alles>
+         
+         </div>
+         
+         <div id=naaminv>
+             <div id=wintext></div><br>
+             
+         
+         
+         
+         </div>
+     
+    
+    <div id=fotset>
+    <img id=rock src="rock.png" alt="ROCK" >
+    
+    <img id=paper src="paper.png" alt="PAPER" >
+    
+    <img id=scissor src="scissors.png" alt="SCISSORS" ><br>
+    </div>
+    <button id=butt1>KIES!</button>
+    <button id=butt0>START!</button>
+    <img id=cpucho src="question-mark.png">
+    <table id=tabel1>
+        <tr>
+            <td id=jij></td>
+            
+        </tr>
+        <tr>
+            <td id=sjij>0</td>
+            
+        </tr>
+    </table>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+    
+    
+    $(document).ready(function(){
+    var jij = 0;
+    var select = "";
+    var oppo  = "";
+    var oppo2  = "";
+    var tel  = "";
+    var naam  = "";
+
+
+$("#butt3").click(function(){
+        
+        
+    $.post("sendscript.php",
+            {
+                naam: naam,
+                score: jij
+            });
+        location.reload();
+       
+    });
+    
+    $("#alles").hide();
+        $("#naaminv").hide();
+        $("#butt1").hide();
+        $("#butt3").hide();
+        
+    
+    function timer(){
+        
+    
+    
+        
+        
+        timer = setInterval(function() {
+    $("#tijd").html(tel -- );
+    document.getElementById("tijd").innerHTML= tel;
+    if(tel == 0){
+        
+        
+        $.post("sendscript.php",
+            {
+                naam: naam,
+                score: jij
+            });
+        
+       
+    
+        
+        
+        $("#wintext").load("scorelijst.php")
+        $("#alles").show();
+        $("#naaminv").show();
+        $("#butt3").show();
+         clearInterval(timer);
+    }
+}, 1000);
+        
+        
+    
+    }
+    
+        
+    
+    function rando(){
+        oppo = Math.floor(Math.random() * 3) + 1 ;
+        oppo2 = Math.floor(Math.random() * 2) + 1 ;
+    }
+    function checkit(){
+        if(oppo == 1 && oppo2 == 1){
+            document.getElementById("cpucho").src = "rock.png";
+
+
+        }
+        
+        if(oppo == 2 && oppo2 == 1){
+            document.getElementById("cpucho").src = "paper.png";
+
+
+        }
+        if(oppo == 3 && oppo2 == 1){
+            document.getElementById("cpucho").src = "scissors.png";
+
+
+        }
+        if(oppo == 1 && oppo2 == 2){
+            document.getElementById("cpucho").src = "rock2.gif";
+
+
+        }
+        
+        if(oppo == 2 && oppo2 == 2){
+            document.getElementById("cpucho").src = "paper2.gif";
+
+
+        }
+        if(oppo == 3 && oppo2 == 2){
+            document.getElementById("cpucho").src = "scissors2.gif";
+
+
+        }
+    }
+        
+        
+    $("#rock").click(function(){
+        
+        select=1
+        $( "#rock" ).effect( "shake" );
+        
+    });
+    $("#paper").click(function(){
+        
+      select = 2
+      $( "#paper" ).effect( "shake" );
+      
+       
+    });
+    $("#scissor").click(function(){
+        
+        select = 3
+        $( "#scissor" ).effect( "shake" );
+        
+       
+    });
+    
+
+    $("#butt0").click(function(){
+          rando()
+        checkit()
+        
+        
+        
+        $("#butt0").hide();
+        $("#butt1").show();
+        
+       timer();
+       
+        
+    });
+    
+    
+    $("#butt2").click(function(){
+        naam = document.getElementById("inp1").value;
+        document.getElementById("jij").innerHTML = naam;
+        select = 0;
+        
+        $("#alles2").hide();
+        $("#naaminv2").hide();
+        
+        tel = 3
+        
+        });
+        
+         $("#butt3").click(function(){
+        
+        
+        });
+    
+    $("#butt1").click(function(){
+        
+
+        
+     
+    
+    
+    if(oppo == 3 &&  select == 2 && oppo2== 1){
+        
+        rando()
+        checkit()
+        
+         
+        checkit()
+        jij = jij - 1
+        checkit()
+        document.getElementById("sjij").innerHTML = jij;
+        checkit()
+        
+    }
+    
+    
+    
+    else if(oppo == 3 && select == 1 && oppo2== 1){
+        rando()
+        checkit()
+        
+        
+        
+         
+        checkit()
+        jij = jij + 1
+        checkit()
+        
+        document.getElementById("sjij").innerHTML = jij;
+        
+        checkit()
+    }
+    
+    
+     else if(oppo == 1 && select == 3 && oppo2== 1){
+        rando()
+        checkit()
+        
+        
+        
+        
+         
+        checkit()
+        
+        jij = jij - 1
+        checkit()
+        document.getElementById("sjij").innerHTML = jij;
+        checkit()
+    }
+    
+    
+     else if(oppo == 1 &&  select == 2 && oppo2== 1){
+        rando()
+        checkit()
+       
+        
+         
+        
+        checkit()
+         jij = jij + 1
+        checkit()
+        document.getElementById("sjij").innerHTML = jij;
+        checkit()
+    }
+    
+    
+    else if(oppo == 1 && select == 1 && oppo2== 1){
+        rando()
+        checkit()
+        
+        
+        
+         
+        checkit()
+        jij = jij - 1
+        checkit()
+        document.getElementById("sjij").innerHTML = jij;
+        checkit()
+        
+    }
+    
+    
+  else if(oppo == 2 && select == 3 && oppo2== 1 ){
+        rando()
+        checkit()
+        
+        
+        
+         
+        checkit()
+        jij = jij + 1
+       checkit()
+        document.getElementById("sjij").innerHTML = jij;
+        checkit()
+        
+    }
+    
+    
+  else if(oppo == 2 &&  select == 2 && oppo2== 1){
+        rando()
+        checkit()
+        
+       
+        
+         
+        checkit()
+        jij = jij - 1
+        checkit()
+        document.getElementById("sjij").innerHTML = jij;
+        checkit()
+    }
+    
+    
+   else if(oppo == 2 && select == 1 && oppo2== 1){
+        rando()
+        checkit()
+        
+        
+        
+        
+         
+        
+        checkit()
+        jij = jij - 1
+        checkit()
+        document.getElementById("sjij").innerHTML = jij;
+        checkit()
+    }
+    
+        
+        
+ else if(oppo == 3 && select == 3 && oppo2== 1){
+     
+        rando()
+        checkit()
+        
+        
+         
+        
+        checkit()
+        jij = jij - 1
+        checkit()
+        document.getElementById("sjij").innerHTML = jij;
+        checkit()
+        
+    }
+    
+    
+  else if(oppo == 3 &&  select == 2 && oppo2== 2){
+        rando()
+        checkit()
+        
+        
+         
+        
+        checkit()
+        jij = jij + 1
+        checkit()
+        document.getElementById("sjij").innerHTML = jij;
+        checkit()
+    }
+    
+    
+  else if(oppo == 3 && select == 1 && oppo2== 2){
+        rando()
+        checkit()
+        
+        
+         
+        checkit()
+        jij = jij - 1
+        checkit()
+        document.getElementById("sjij").innerHTML = jij;
+        checkit()
+        
+    }
+    
+    
+  else if(oppo == 1 && select == 3 && oppo2== 2){
+        rando()
+        checkit()
+        
+        
+        
+        
+         
+        checkit()
+        
+        jij = jij + 1
+        checkit()
+        document.getElementById("sjij").innerHTML = jij;
+        checkit()
+    }
+    
+    
+ else if(oppo == 1 &&  select == 2 && oppo2== 2){
+        rando()
+        checkit()
+        
+         
+        checkit()
+        jij = jij - 1
+        checkit()
+        document.getElementById("sjij").innerHTML = jij;
+        checkit()
+    }
+    
+    
+ else if(oppo == 1 && select == 1 && oppo2== 2){
+        rando()
+        checkit()
+        
+        
+        
+         
+        
+        checkit()
+        jij = jij - 1
+        checkit()
+        document.getElementById("sjij").innerHTML = jij;
+        checkit()
+    }
+    
+    
+ else if(oppo == 2 && select == 3 && oppo2== 2 ){
+        rando()
+        checkit()
+        
+        
+        
+        
+        checkit()
+        jij = jij - 1
+       checkit()
+        document.getElementById("sjij").innerHTML = jij;
+        checkit()
+    }
+    
+    
+ else if(oppo == 2 &&  select == 2 && oppo2== 2){
+       rando()
+        checkit()
+        
+       
+        
+        
+        jij = jij - 1
+        checkit()
+        document.getElementById("sjij").innerHTML = jij;
+        checkit()
+    }
+    
+    
+  else if(oppo == 2 && select == 1 && oppo2== 2){
+       rando()
+        checkit()
+        
+        
+        
+        
+         
+        
+        jij = jij + 1
+        checkit()
+        document.getElementById("sjij").innerHTML = jij;
+        checkit()
+    }else{
+        rando()
+        checkit()
+        
+        
+        
+        
+         
+        
+        jij = jij + 1
+        checkit()
+        document.getElementById("sjij").innerHTML = jij;
+        checkit()
+    }
+    
+    });
+    
+});  
+
+    </script>
+    </body>
+  
+    
+</html>
