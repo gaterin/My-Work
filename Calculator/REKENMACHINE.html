@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+        #outpu{
+            font-size:50px;
+            
+        }
+        
+    </style>
+    <link rel="stylesheet" href="rek.css" type="text/css" />
+    <meta charset="UTF-8">
+    <title>Rekenmachine!</title>
+</head>
+<body>
+    <center>
+    <input id="outpu" disabled="disabled" placeholder="0"/>
+    <table>
+        <tr>
+            <td><button onclick=cijfer(9) id="negen">9</td>
+            <td><button onclick=cijfer(8) id="acht">8</td>
+            <td><button onclick=cijfer(7) id="zeven">7</td>
+            <td><button onclick=clear1() >C</td>
+            
+        </tr>
+        <tr >
+            <td><button onclick="cijfer(6)"  id="zes">6</td>
+            <td><button onclick=cijfer(5)  id="vijf">5</td>
+            <td><button onclick=cijfer(4)  id="vier">4</td>
+            <td><button onclick='symbool("/")'   id="delen">/</td>
+            
+            
+        </tr>
+        <tr >
+            <td><button onclick=cijfer(3)  id="drie">3</td>
+            <td><button onclick=cijfer(2)  id="twee">2</td>
+            <td><button onclick=cijfer(1)  id="een">1</td>
+            
+            <td><button onclick='symbool("-")'  id="min">-</td>
+            
+        </tr>
+     
+        <tr >
+            <td><button onclick='symbool("+")'  id="plus">+</td>
+            <td><button onclick=cijfer(0)  id="nul">0</td>
+            <td><button onclick='symbool("*")'   id="keer">X</td>
+            
+            <td><button onclick='antwoord()' id="punt">=</td>
+             
+
+            
+            
+        </tr>
+        
+        
+    </table>
+    </center>
+    <script>
+    
+    var getal1 ="";
+    var getal2 ="";
+    var symbool1 ="";
+    var is_gebruikt = false;
+    
+    function symbool(symbooltje){
+    
+    if (symbool1 == "" && getal1 != ""){
+        symbool1 = symbooltje;   
+        
+        document.getElementById("outpu").value += symbool1;
+    }
+   
+}
+    
+   function antwoord(){
+       switch(symbool1){
+           case "+" :
+           document.getElementById("outpu").value = parseInt(getal1) + parseInt(getal2);
+           symbool1="";
+           getal1 = document.getElementById("outpu").value;
+           break;
+           
+           case "-" :
+           getal1 = getal1 - getal2;
+           document.getElementById("outpu").value = getal1;
+           symbool1="";
+           getal1 = document.getElementById("outpu").value;
+           break;
+           
+           case "*":
+            getal1 = getal1 * getal2;
+           document.getElementById("outpu").value = getal1;
+           symbool1="";
+           getal1 = document.getElementById("outpu").value;
+           break;
+           
+           case "/":
+            getal1 = getal1 / getal2;
+           document.getElementById("outpu").value = getal1;
+           symbool1="";
+           getal1 = document.getElementById("outpu").value;
+           break;
+       }
+    is_gebruikt = true;
+    getal2 = "";
+    symbool1 = "";
+    
+   }
+   function clear1(){
+       getal1 ="";
+       getal2 ="";
+       symbool1 ="";
+       document.getElementById("outpu").value = "";
+   }
+    function cijfer(y){
+        if (symbool1 == ""){
+            if (is_gebruikt == true){
+                getal1 = y;
+                document.getElementById("outpu").value = getal1;
+                is_gebruikt = false;
+            }
+            else{
+                getal1 = getal1.toString() + y.toString();
+                document.getElementById("outpu").value = getal1;
+                console.log(getal1);
+            }
+        }
+        else {
+            getal2 += y;
+            document.getElementById("outpu").value = getal1 + symbool1 + getal2;
+            console.log(getal2);
+        }
+    }
+    
+    function symbool(x){
+        if(getal1 != "" && symbool1 == ""){
+            
+        symbool1 = x;
+        console.log(symbool1)
+        document.getElementById("outpu").value += symbool1;
+    
+}
+    }
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+
+    td{
+        height:57px;
+        width:57px;
+        border:1px solid black;
+        text-align:center;
+    }
+    input{
+        height:50px;
+        width:250px;
+        
+    }
+    button{
+        
+        width:56px;
+        height:56px;
+    }
+    #outpu{
+            font-size:50px;
+            
+        }
+        #cen{
+            position:relative;
+            top:309896999%;
+            left:30%;
+        }
+    
