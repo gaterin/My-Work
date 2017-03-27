@@ -1,0 +1,1245 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <style>
+    body{
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-color: black;
+        
+        overflow: hidden;
+        background-image:url("polygonal-texture-background-vector.jpg");
+    }
+        .cellen1{
+            width:190px;
+            height:190px;
+            font-size:150px;
+            
+        }
+        #blscreen{
+        opacity:0.8;
+        z-index:9997;
+        background-color:black;
+        width:3000px;
+        height:3000px;
+        position:absolute;
+        left:-100px;
+        top:-100px;
+    }
+    #naaminv{
+        z-index:9999;
+        width:300px;
+        height:300px;
+        background-color:white;
+        position:absolute;
+        top:50%;
+        left:50%;
+        margin-left:-150px;
+        margin-top:-150px;
+        border-radius:10px;
+        
+        background-image:url("polygonal-texture-background-vector.jpg");
+        border:solid white;
+    }
+    #introtext{
+        position:relative;
+        top:10px;
+        text-align:center;
+        font-size:30px;
+        
+
+
+    }
+    .input1{
+        width:250px;
+        height:50px;
+        position:relative;
+        top:10px;
+        left:0px;
+        display:block;
+        font-size:40px;
+        margin:25px;
+        border-radius:4px;
+        border:3px solid lightgreen;
+        
+        
+    }
+        #butt1{
+        position:relative;
+        top:30px;
+        left:60px;
+        width:180px;
+        height:40px;
+        border-radius:5px;
+        text-align:center;
+        border:3px solid lightblue;
+    }
+    #tabel1{
+        font-size:60px;
+        position:relative;
+        left:4%;
+        top:100px;
+        
+        border-collapse:collapse;
+        margin-left:-150px;
+        color:white;
+        
+        
+    }
+    #punt1{
+        border-right:2px solid #00264d;
+        border-bottom:2px solid #00264d;
+        
+    }
+    #punt2{
+        border-right:2px solid #00264d;
+        border-bottom:2px solid #00264d;
+        border-left:2px solid #00264d;
+        
+        
+    }
+    #punt3{
+        
+        border-bottom:2px solid #00264d;
+        border-left:2px solid #00264d;
+        
+    }
+    #punt4{
+        border-right:2px solid #00264d;
+        border-bottom:2px solid #00264d;
+        
+        border-top:2px solid #00264d;;
+    }
+    #punt5{
+        border:2px solid #00264d;
+    }
+    #punt6{
+        
+        border-bottom:2px solid #00264d;
+        border-left:2px solid #00264d;
+        border-top:2px solid #00264d;;
+    }
+    #punt7{
+        border-right:2px solid #00264d;
+        
+        border-top:2px solid #00264d;;
+    }
+    #punt8{
+        border-right:2px solid #00264d;
+        
+        border-left:2px solid #00264d;
+        border-top:2px solid #00264d;;
+    }
+    #punt9{
+        
+        border-left:2px solid #00264d;
+        border-top:2px solid #00264d;;
+    }
+    #tabel2{
+        border-collapse:collapse;
+    }
+    button{
+     background-color:transparent;
+     border:transparent;
+    }
+    button:active{
+        border:transparent;
+    }
+    #blscreen1{
+        opacity:0.8;
+        z-index:9996;
+        background-color:black;
+        width:3000px;
+        height:3000px;
+        position:absolute;
+        left:-100px;
+        top:-100px;
+    }
+    #speler1{
+        border-right:2px solid white;
+        border-bottom:2px solid white;
+        width:300px;
+    }
+    #speler2{
+        border-bottom:2px solid white;
+        border-left:2px solid white;
+        width:300px;
+    }
+    #score1{
+        border-top:2px solid white;
+        border-right:2px solid white;
+    }
+    #score2{
+        border-top:2px solid white;
+        border-left:2px solid white;
+    }
+    #naaminv1{
+        z-index:9999;
+        width:300px;
+        height:300px;
+        background-color:white;
+        position:absolute;
+        top:50%;
+        left:50%;
+        margin-left:-150px;
+        margin-top:-150px;
+        border-radius:10px;
+    }
+    #butt3{
+        position:relative;
+        top:50px;
+        left:50px;
+        width:100px;
+        height:40px;
+        border-radius:10px;
+        text-align:center;
+        z-index:9998;
+        font-size:20px;
+    }
+    #butt2{
+        position:relative;
+        top:50px;
+        left:20px;
+        width:100px;
+        height:40px;
+        border-radius:10px;
+        text-align:center;
+        z-index:9997;
+        font-size:20px;
+    }
+    #wintext{
+        position:relative;
+        top:30px;
+        font-size:30px;
+        text-align:center;
+        z-index:9999;
+    }
+    #wintext1{
+        position:relative;
+        top:30px;
+        font-size:30px;
+        text-align:center;
+        z-index:9999;
+    }
+    </style>
+    <meta charset="UTF-8">
+    <title>boterkaas</title>
+</head>
+<body>
+    <a href="bkindex.html" style="position:relative;top:450px;font-size:30px; padding:25px; border:2px solid white; border-radius:5px; background-color:##1a75ff;text-decoration: none;color:black;" >TERUG NAAR MENU!</a>
+     
+    <div id=blscreen>
+         
+         </div>
+         
+         <div id=naaminv>
+             
+             <div id=introtext>Geef je naam op</div><br>
+             <input placeholder="Speler 1" class=input1 id=inp1 type="text" name="name"  />
+             
+         <button id=butt1 >Begin!</button>
+         
+         </div>
+          <div id=blscreen1>
+         
+         </div>
+         
+         <div id=naaminv1>
+             <div id=wintext>Punt erbij!</div><br>
+             <div id=wintext1>Punt erbij!</div><br>
+             <button id=butt2>OPNIEUW!</button>
+             <button id=butt3>DOORGAAN!</button>
+             </div>
+    <center>
+    <table id=tabel2>
+        
+        <tr>
+            <td >
+                <button id=punt1  onclick="kruis1();check();checkWin();"  class=cellen1></button>
+            </td>
+            <td >
+                <button id=punt2  onclick="kruis2();check();checkWin();"  class=cellen1></button>
+            </td>
+            <td >
+                <button id=punt3 onclick="kruis3();check();checkWin();"   class=cellen1></button>
+            </td>
+            
+            </tr>
+        <tr>
+           <td >
+                <button id=punt4 onclick="kruis4();check();checkWin();"   class=cellen1></button>
+            </td>
+            <td >
+                <button id=punt5 onclick="kruis5();check();checkWin();"  class=cellen1></button>
+            </td>
+            <td >
+                <button id=punt6 onclick="kruis6();check();checkWin();"  class=cellen1></button>
+            </td>
+            
+            </tr>
+        <tr>
+            <td >
+                <button id=punt7 onclick="kruis7();check();checkWin();"   class=cellen1></button>
+            </td>
+            <td >
+                <button id=punt8 onclick="kruis8();check();checkWin();" class=cellen1></button>
+            </td>
+            <td >
+                <button id=punt9 onclick="kruis9();check();checkWin();"  class=cellen1></button>
+            </td>
+            
+            </tr>
+    </table>
+    <table id=tabel1 >
+        <tr>
+            <td id=speler1 style="padding:5px;text-align:center;">
+               
+            </td>
+            <td id=speler2 style="padding:5px;text-align:center;">
+               COMPUTER
+            </td>
+        </tr>
+        <tr>
+            <td id=score1 style="text-align:center;">
+                0
+            </td>
+            <td id=score2 style="text-align:center;">
+                0
+            </td>
+        </tr>
+    </table>
+    </center>
+</body>
+<script>
+     var checkdraw = true
+ var score1 = 0;
+ var score2 = 0; 
+ var speler1naam = document.getElementById("inp1").value;
+ var vardas = 0;
+ var check2=false;
+ var gate = 0;
+    turn = turn + 1
+ var punt1 ="";
+ var punt2 ="";
+ var punt3 ="";
+ var punt4 ="";
+ var punt5 ="";
+ var punt6 ="";
+ var punt7 ="";
+ var punt8 ="";
+ var punt9 ="";
+ var vardas1 = 0;
+ 
+ var turn=1;
+   $("#blscreen").show();
+        $("#naaminv").show();
+        $("#blscreen1").hide();
+        $("#naaminv1").hide();
+         function check(){  
+     if(punt1 == "X"&& punt2 == "X"&& punt3 == "X" ||
+        punt4 == "X"&& punt5 == "X"&& punt6 == "X" ||
+        punt7 == "X" &&punt8 == "X"&& punt9 == "X" ||
+        punt1 == "X" &&punt5 == "X"&& punt9 == "X" ||
+        punt1 == "X"&& punt4 == "X"&& punt7 == "X" ||
+        punt2 == "X" &&punt5 == "X" &&punt8 == "X" ||
+        punt3 == "X" &&punt6 == "X"&& punt9 == "X" ||
+        punt3 == "X" &&punt5 == "X" &&punt7 == "X" ){
+       document.getElementById("wintext").innerHTML = speler1naam + " heeft een punt erbij";
+       gate=3
+      punt1 = document.getElementById("punt1").value = "";
+        punt2 = document.getElementById("punt2").value = "";
+        punt3 = document.getElementById("punt3").value = "";
+        punt4 = document.getElementById("punt4").value = "";
+        punt5 = document.getElementById("punt5").value = "";
+        punt6 = document.getElementById("punt6").value = "";
+        punt7 = document.getElementById("punt7").value = "";
+        punt8 = document.getElementById("punt8").value = "";
+        punt9 = document.getElementById("punt9").value = "";
+        checkdraw = false
+        varda=0;
+        score1= score1 + 1
+        document.getElementById("score1").innerHTML = score1
+        $("#blscreen1").show();
+        $("#naaminv1").show();
+        
+        
+    
+    }
+else if(punt1 == "O"&& punt2 == "O"&& punt3 == "O" ||
+        punt4 == "O"&& punt5 == "O"&& punt6 == "O" ||
+        punt7 == "O" &&punt8 == "O"&& punt9 == "O" ||
+        punt1 == "O" &&punt5 == "O"&& punt9 == "O" ||
+        punt1 == "O"&& punt4 == "O"&& punt7 == "O" ||
+        punt2 == "O" &&punt5 == "O" &&punt8 == "O" ||
+        punt3 == "O" &&punt6 == "O"&& punt9 == "O" ||
+        punt3 == "O" &&punt5 == "O" &&punt7 == "O" ){
+       document.getElementById("wintext").innerHTML = "COMPUTER heeft een punt erbij"
+        gate=3
+        punt1 = document.getElementById("punt1").value = "";
+        punt2 = document.getElementById("punt2").value = "";
+        punt3 = document.getElementById("punt3").value = "";
+        punt4 = document.getElementById("punt4").value = "";
+        punt5 = document.getElementById("punt5").value = "";
+        punt6 = document.getElementById("punt6").value = "";
+        punt7 = document.getElementById("punt7").value = "";
+        punt8 = document.getElementById("punt8").value = "";
+        punt9 = document.getElementById("punt9").value = "";
+        varda= 1
+        checkdraw = false
+        score2= score2 + 1
+        document.getElementById("score2").innerHTML = score2
+        $("#blscreen1").show();
+        $("#naaminv1").show();
+        
+        
+    }
+   }
+
+        
+        function kruis1(){
+     punt1 = document.getElementById("punt1").value;
+     if(punt1 == "" ){turn=turn+1
+if (gate == 0){
+    
+        document.getElementById("punt1").innerHTML = "X";
+        document.getElementById("punt1").value = "X";
+        gate=1;
+    
+        
+    
+    
+}
+
+}
+check();
+}
+
+
+
+function kruis2(){
+     punt2 = document.getElementById("punt2").value;
+     if(punt2 == "" ){turn=turn+1
+if (gate == 0){
+    
+        document.getElementById("punt2").innerHTML = "X";
+        document.getElementById("punt2").value = "X";
+        gate=1;
+    
+}
+
+}
+check();
+}
+function kruis3(){
+     punt3= document.getElementById("punt3").value;
+     if(punt3 == "" ){
+         turn=turn+1
+if (gate == 0){
+    
+        document.getElementById("punt3").innerHTML = "X";
+        document.getElementById("punt3").value = "X";
+        gate=1;
+    
+}
+
+}
+check();
+}
+function kruis4(){
+     punt4 = document.getElementById("punt4").value;
+     if(punt4 == "" ){
+if (gate == 0){
+    
+        document.getElementById("punt4").innerHTML = "X";
+        document.getElementById("punt4").value = "X";
+        gate=1;
+    
+}
+
+}
+check();
+}
+function kruis5(){
+     punt5 = document.getElementById("punt5").value;
+     if(punt5 == "" ){turn=turn+1
+if (gate == 0){
+    
+        document.getElementById("punt5").innerHTML = "X";
+        document.getElementById("punt5").value = "X";
+        gate=1;
+    
+}
+
+}
+check();
+}
+function kruis6(){
+     punt6 = document.getElementById("punt6").value;
+     if(punt6 == "" ){turn=turn+1
+if (gate == 0){
+    
+        document.getElementById("punt6").innerHTML = "X";
+        document.getElementById("punt6").value = "X";
+        gate=1;
+    
+}
+
+}
+check();
+}
+function kruis7(){
+     punt7 = document.getElementById("punt7").value;
+     if(punt7 == "" ){turn=turn+1
+if (gate == 0){
+    
+        document.getElementById("punt7").innerHTML = "X";
+        document.getElementById("punt7").value = "X";
+        gate=1;
+    
+}
+
+}
+check();
+}
+function kruis8(){
+     punt8 = document.getElementById("punt8").value;
+     if(punt8 == "" ){turn=turn+1
+if (gate == 0){
+    
+        document.getElementById("punt8").innerHTML = "X";
+        document.getElementById("punt8").value = "X";
+        gate=1;
+    
+}
+
+}
+check();
+}
+function kruis9(){
+     punt9 = document.getElementById("punt9").value;
+     if(punt9 == "" ){turn=turn+1
+if (gate == 0){
+    
+        document.getElementById("punt9").innerHTML = "X";
+        document.getElementById("punt9").value = "X";
+        gate=1;
+    
+}
+
+}
+check();
+}
+
+
+function check3(){
+     if(turn==9 && checkdraw==true){
+         document.getElementById("wintext").innerHTML = "GELIJKSPEL!"
+         $("#blscreen1").show();
+        $("#naaminv1").show();
+        // if(varda==0){
+        //     document.getElementById("wintext1").innerHTML = speler2naam + " mag beginnen!";
+        // }else if(varda==1){
+        //     document.getElementById("wintext1").innerHTML = speler1naam + " mag beginnen!";
+        // }
+     }
+ }
+
+        
+        $("#butt1").click(function(){
+        
+         $("#blscreen").hide();
+        $("#naaminv").hide();
+        speler1naam = document.getElementById("inp1").value;
+        document.getElementById("speler1").innerHTML = speler1naam;
+       
+       
+    });
+    $("#butt2").click(function(){
+        
+         location.reload();
+       
+    });
+    
+    $("#butt3").click(function(){
+        document.getElementById("punt1").innerHTML = "";
+        document.getElementById("punt2").innerHTML = "";
+        document.getElementById("punt3").innerHTML = "";
+        document.getElementById("punt4").innerHTML = "";
+        document.getElementById("punt5").innerHTML = "";
+        document.getElementById("punt6").innerHTML = "";
+        document.getElementById("punt7").innerHTML = "";
+        document.getElementById("punt8").innerHTML = "";
+        document.getElementById("punt9").innerHTML = "";
+        punt1 = "";
+        punt2 = "";
+        punt3 = "";
+        punt4 = "";
+        punt5 = "";
+        punt6 = "";
+        punt7 = "";
+        punt8 = "";
+        punt9 = "";
+        document.getElementById("punt1").value = "";
+        document.getElementById("punt2").value = "";
+        document.getElementById("punt3").value = "";
+        document.getElementById("punt4").value = "";
+        document.getElementById("punt5").value = "";
+        document.getElementById("punt6").value = "";
+        document.getElementById("punt7").value = "";
+        document.getElementById("punt8").value = "";
+        document.getElementById("punt9").value = "";
+        
+        
+        $("#blscreen1").hide();
+        $("#naaminv1").hide();
+        
+    //   if(varda== 0){
+    //         gate=1
+    //     }else if(varda==1){
+    //         gate=0
+    //     }
+        check2=false
+        checkdraw=true
+        turn=1;
+        gate=0;
+    });
+    
+   setTimeout(checkWin(), 1000);
+  function checkWin(){
+      
+       leesuit()
+  check();
+  if(punt1 == "O" && punt2 == "O" && punt3 == "" && gate == 1)
+  {
+    document.getElementById("punt3").value = "O"
+    document.getElementById("punt3").innerHTML = "O"
+    punt3 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt2 == "O" && punt3 == "O" && punt1 == "" && gate == 1)
+  {
+    document.getElementById("punt1").value = "O"
+    document.getElementById("punt1").innerHTML = "O"
+    punt1 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt4 == "O" && punt5 == "O" && punt6 == "" && gate == 1)
+  {
+    document.getElementById("punt6").value = "O"
+    document.getElementById("punt6").innerHTML = "O"
+    punt6 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt5 == "O" && punt6 == "O" && punt4 == "" && gate == 1)
+  {
+    document.getElementById("punt4").value = "O"
+    document.getElementById("punt4").innerHTML = "O"
+    punt4 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt7 == "O" && punt8 == "O" && punt9 == "" && gate == 1)
+  {
+    document.getElementById("punt9").value = "O"
+    document.getElementById("punt9").innerHTML = "O"
+    punt9 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt8 == "O" && punt9 == "O" && punt7 == "" && gate == 1)
+  {
+    document.getElementById("punt7").value = "O"
+    document.getElementById("punt7").innerHTML = "O"
+    punt7 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt1 == "O" && punt5 == "O" && punt9 == "" && gate == 1)
+  {
+    document.getElementById("punt9").value = "O"
+    document.getElementById("punt9").innerHTML = "O"
+    punt9 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt5 == "O" && punt9 == "O" && punt1 == "" && gate == 1)
+  {
+    document.getElementById("punt1").value = "O"
+    document.getElementById("punt1").innerHTML = "O"
+    punt1 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt3 == "O" && punt5 == "O" && punt7 == "" && gate == 1)
+  {
+    document.getElementById("punt7").value = "O"
+    document.getElementById("punt7").innerHTML = "O"
+    punt7 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt7 == "O" && punt5 == "O" && punt3 == "" && gate == 1)
+  {
+    document.getElementById("punt3").value = "O"
+    document.getElementById("punt3").innerHTML = "O"
+    punt3 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt1 == "O" && punt3 == "O" && punt2 == "" && gate == 1)
+  {
+    document.getElementById("punt2").value = "O"
+    document.getElementById("punt2").innerHTML = "O"
+    punt2 = "O";
+    gate = 0;
+    turn = turn + 1
+    
+  }
+  else if(punt4 == "O" && punt6 == "O" && punt5 == "" && gate == 1)
+  {
+    document.getElementById("punt5").value = "O"
+    document.getElementById("punt5").innerHTML = "O"
+    punt5 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt7 == "O" && punt9 == "O" && punt8 == "" && gate == 1)
+  {
+    document.getElementById("punt8").value = "O"
+    document.getElementById("punt8").innerHTML = "O"
+    punt8 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt1 == "O" && punt7 == "O" && punt4 == "" && gate == 1)
+  {
+    document.getElementById("punt4").value = "O"
+    document.getElementById("punt4").innerHTML = "O"
+    punt4 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt2 == "O" && punt8 == "O" && punt5 == "" && gate == 1)
+  {
+    document.getElementById("punt5").value = "O"
+    document.getElementById("punt5").innerHTML = "O"
+    punt5 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt3 == "O" && punt9 == "O" && punt6 == "" && gate == 1)
+  {
+    document.getElementById("punt6").value = "O"
+    document.getElementById("punt6").innerHTML = "O"
+    punt6 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt1 == "O" && punt5 == "O" && punt9 == "" && gate == 1)
+  {
+    document.getElementById("punt9").value = "O"
+    document.getElementById("punt9").innerHTML = "O"
+    punt9 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt4 == "O" && punt7 == "O" && punt1 == "" && gate == 1)
+  {
+    document.getElementById("punt1").value = "O"
+    document.getElementById("punt1").innerHTML = "O"
+    punt1 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt5 == "O" && punt8 == "O" && punt2 == "" && gate == 1)
+  {
+    document.getElementById("punt2").value = "O"
+    document.getElementById("punt2").innerHTML = "O"
+    punt2 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt6 == "O" && punt9 == "O" && punt3 == "" && gate == 1)
+  {
+    document.getElementById("punt3").value = "O"
+    document.getElementById("punt3").innerHTML = "O"
+    punt3 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt1 == "O" && punt4 == "O" && punt7 == "" && gate == 1)
+  {
+    document.getElementById("punt7").value = "O"
+    document.getElementById("punt7").innerHTML = "O"
+    punt7 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt2 == "O" && punt5 == "O" && punt8 == "" && gate == 1)
+  {
+    document.getElementById("punt8").value = "O"
+    document.getElementById("punt8").innerHTML = "O"
+    punt8 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt3 == "O" && punt6 == "O" && punt9 == "" && gate == 1)
+  {
+    document.getElementById("punt9").value = "O"
+    document.getElementById("punt9").innerHTML = "O"
+    punt9 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt1 == "O" && punt9 == "O" && punt5 == "" && gate == 1)
+  {
+    document.getElementById("punt5").value = "O"
+    document.getElementById("punt5").innerHTML = "O"
+    punt5 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt3 == "O" && punt7 == "O" && punt5 == "" && gate == 1)
+  {
+    document.getElementById("punt5").value = "O"
+    document.getElementById("punt5").innerHTML = "O"
+    punt5 = "O";
+    gate = 0;
+    turn = turn + 1
+  }
+  else
+  {
+    computer()
+  }
+  check()
+  check3()
+};
+    function computer(){
+        leesuit()
+  check()
+  if(punt1 == "X" && punt2 == "X" && punt3 == "" && gate == 1)
+  {
+    document.getElementById("punt3").value = "O"
+    document.getElementById("punt3").innerHTML = "O"
+    punt3 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt2 == "X" && punt3 == "X" && punt1 == "" && gate == 1)
+  {
+    document.getElementById("punt1").value = "O"
+    document.getElementById("punt1").innerHTML = "O"
+    punt1 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt4 == "X" && punt5 == "X" && punt6 == "" && gate == 1)
+  {
+    document.getElementById("punt6").value = "O"
+    document.getElementById("punt6").innerHTML = "O"
+    punt6 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt5 == "X" && punt6 == "X" && punt4 == "" && gate == 1)
+  {
+    document.getElementById("punt4").value = "O"
+    document.getElementById("punt4").innerHTML = "O"
+    punt4 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt7 == "X" && punt8 == "X" && punt9 == "" && gate == 1)
+  {
+    document.getElementById("punt9").value = "O"
+    document.getElementById("punt9").innerHTML = "O"
+    punt9 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt8 == "X" && punt9 == "X" && punt7 == "" && gate == 1)
+  {
+    document.getElementById("punt7").value = "O"
+    document.getElementById("punt7").innerHTML = "O"
+    punt7 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt1 == "X" && punt5 == "X" && punt9 == "" && gate == 1)
+  {
+    document.getElementById("punt9").value = "O"
+    document.getElementById("punt9").innerHTML = "O"
+    punt9 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt5 == "X" && punt9 == "X" && punt1 == "" && gate == 1)
+  {
+    document.getElementById("punt1").value = "O"
+    document.getElementById("punt1").innerHTML = "O"
+    punt1 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt3 == "X" && punt5 == "X" && punt7 == "" && gate == 1)
+  {
+    document.getElementById("punt7").value = "O"
+    document.getElementById("punt7").innerHTML = "O"
+    punt7 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt7 == "X" && punt5 == "X" && punt3 == "" && gate == 1)
+  {
+    document.getElementById("punt3").value = "O"
+    document.getElementById("punt3").innerHTML = "O"
+    punt3 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt1 == "X" && punt3 == "X" && punt2 == "" && gate == 1)
+  {
+    document.getElementById("punt2").value = "O"
+    document.getElementById("punt2").innerHTML = "O"
+    punt2 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt4 == "X" && punt6 == "X" && punt5 == "" && gate == 1)
+  {
+    document.getElementById("punt5").value = "O"
+    document.getElementById("punt5").innerHTML = "O"
+    punt5 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt7 == "X" && punt9 == "X" && punt8 == "" && gate == 1)
+  {
+    document.getElementById("punt8").value = "O"
+    document.getElementById("punt8").innerHTML = "O"
+    punt8 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt1 == "X" && punt7 == "X" && punt4 == "" && gate == 1)
+  {
+    document.getElementById("punt4").value = "O"
+    document.getElementById("punt4").innerHTML = "O"
+    punt4 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt2 == "X" && punt8 == "X" && punt5 == "" && gate == 1)
+  {
+    document.getElementById("punt5").value = "O"
+    document.getElementById("punt5").innerHTML = "O"
+    punt5 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt3 == "X" && punt9 == "X" && punt6 == "" && gate == 1)
+  {
+    document.getElementById("punt6").value = "O"
+    document.getElementById("punt6").innerHTML = "O"
+    punt6 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt1 == "X" && punt5 == "X" && punt9 == "" && gate == 1)
+  {
+    document.getElementById("punt9").value = "O"
+    document.getElementById("punt9").innerHTML = "O"
+    punt9 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt4 == "X" && punt7 == "X" && punt1 == "" && gate == 1)
+  {
+    document.getElementById("punt1").value = "O"
+    document.getElementById("punt1").innerHTML = "O"
+    punt1 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt5 == "X" && punt8 == "X" && punt2 == "" && gate == 1)
+  {
+    document.getElementById("punt2").value = "O"
+    document.getElementById("punt2").innerHTML = "O"
+    punt2 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt6 == "X" && punt9 == "X" && punt3 == "" && gate == 1)
+  {
+    document.getElementById("punt3").value = "O"
+    document.getElementById("punt3").innerHTML = "O"
+    punt3 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt1 == "X" && punt4 == "X" && punt7 == "" && gate == 1)
+  {
+    document.getElementById("punt7").value = "O"
+    document.getElementById("punt7").innerHTML = "O"
+    punt7 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt2 == "X" && punt5 == "X" && punt8 == "" && gate == 1)
+  {
+    document.getElementById("punt8").value = "O"
+    document.getElementById("punt8").innerHTML = "O"
+    punt8 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt3 == "X" && punt6 == "X" && punt9 == "" && gate == 1)
+  {
+    document.getElementById("punt9").value = "O"
+    document.getElementById("punt9").innerHTML = "O"
+    punt9 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt1 == "X" && punt9 == "X" && punt5 == "" && gate == 1)
+  {
+    document.getElementById("punt5").value = "O"
+    document.getElementById("punt5").innerHTML = "O"
+    punt5 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else if(punt3 == "X" && punt7 == "X" && punt5 == "" && gate == 1)
+  {
+    document.getElementById("punt5").value = "O"
+    document.getElementById("punt5").innerHTML = "O"
+    punt5 = "O"
+    gate = 0;
+    turn = turn + 1
+  }
+  else
+  {
+    eerstemove()
+  }
+  check()
+  check3()
+}
+
+function eerstemove(){
+    
+  leesuit()
+  if(document.getElementById("punt5").value == "" && gate == 1)
+  {
+    document.getElementById("punt5").value = "O"
+    document.getElementById("punt5").innerHTML = "O"
+    gate = 0
+    punt5 = "O"
+    turn = turn + 1
+  }
+  else if(document.getElementById("punt1").value == "" && gate == 1)
+  {
+    document.getElementById("punt1").value = "O"
+    document.getElementById("punt1").innerHTML = "O"
+    
+    gate = 0
+    punt1 = "O"
+    turn = turn + 1
+  }
+  else if(document.getElementById("punt9").value == "" && gate == 1)
+  {
+    document.getElementById("punt9").value = "O"
+    document.getElementById("punt9").innerHTML = "O"
+    gate = 0
+    punt9 = "O"
+  }
+  else if(document.getElementById("punt6").value == "" && gate == 1)
+  {
+    document.getElementById("punt6").value = "O"
+    document.getElementById("punt6").innerHTML = "O"
+    gate = 0
+    punt6 = "O"
+    turn = turn + 1
+  }
+  else if(document.getElementById("punt2").value == "" && gate == 1)
+  {
+    document.getElementById("punt2").value = "O"
+    document.getElementById("punt2").innerHTML = "O"
+    gate = 0
+    punt2 = "O"
+  }
+  else if(document.getElementById("punt8").value == "" && gate == 1)
+  {
+    document.getElementById("punt8").value = "O"
+    document.getElementById("punt8").innerHTML = "O"
+    gate = 0
+    punt8 = "O"
+  }
+  else if(document.getElementById("punt3").value == "" && gate == 1)
+  {
+    document.getElementById("punt3").value = "O"
+    document.getElementById("punt3").innerHTML = "O"
+    gate = 0
+    punt3 = "O"
+    turn = turn + 1
+  }
+  else if(document.getElementById("punt7").value == "" && gate == 1)
+  {
+    document.getElementById("punt7").value = "O"
+    document.getElementById("punt7").innerHTML = "O"
+    gate = 0
+    punt7 = "O"
+    turn = turn + 1
+  }
+  else if(document.getElementById("punt4").value == "" && gate == 1)
+  {
+    document.getElementById("punt4").value = "O"
+    document.getElementById("punt4").innerHTML = "O"
+    gate = 0
+    punt4 = "O"
+    turn = turn + 1
+  }
+  check()
+  check3()
+}    
+    
+    
+    
+    $("#punt1").click(function(){
+        
+         kruis1()
+        
+       
+       check();
+      
+       check3();
+    });
+    $("#punt2").click(function(){
+        
+         kruis2()
+        
+       
+       check();
+      
+       check3();
+    });
+    $("#punt3").click(function(){
+        
+         
+        kruis3()
+       
+       check();
+      
+       check3();
+    });
+    $("#punt4").click(function(){
+        
+         kruis4()
+        
+        check();
+      
+       check3();
+    });
+    $("#punt5").click(function(){
+        
+         kruis5()
+        
+       
+       check();
+      
+       check3();
+    });
+    $("#punt6").click(function(){
+        
+         
+        
+       kruis6()
+       
+       check();
+      
+       check3();
+    });
+    $("#punt7").click(function(){
+        
+         kruis7()
+        
+        check();
+      
+       check3();
+    });
+    $("#punt8").click(function(){
+        
+         kruis8()
+        
+        check();
+      
+       check3();
+    });
+    $("#punt9").click(function(){
+        
+         
+        
+       kruis9()
+       
+       check();
+      
+       check3();
+    });
+    
+        
+ function leesuit() {
+  punt1 = document.getElementById("punt1").value;
+  punt2 = document.getElementById("punt2").value;
+  punt3 = document.getElementById("punt3").value;
+  punt4 = document.getElementById("punt4").value;
+  punt5 = document.getElementById("punt5").value;
+  punt6 = document.getElementById("punt6").value;
+  punt7 = document.getElementById("punt7").value;
+  punt8 = document.getElementById("punt8").value;
+  punt9 = document.getElementById("punt9").value;
+ }
+ 
+ 
+ 
+  
+ 
+
+function check3(){
+     if(turn==9 && checkdraw==true){
+         document.getElementById("wintext").innerHTML = "GELIJKSPEL!"
+         document.getElementById("wintext1").innerHTML = "NIEMAND KRIJGT EEN PUNT!"
+         $("#blscreen1").show();
+        $("#naaminv1").show();
+        // if(varda==0){
+        //     document.getElementById("wintext1").innerHTML = speler2naam + " mag beginnen!";
+        // }else if(varda==1){
+        //     document.getElementById("wintext1").innerHTML = speler1naam + " mag beginnen!";
+        // }
+     }
+ }
+
+
+
+//  })
+
+function test(){
+    alert( "checkdraw =" +checkdraw)
+    alert( "turn =" +turn)
+    alert( "gate =" +gate)
+    alert("punt1 =" + punt1)
+    alert( "punt2 =" +punt2)
+    alert("punt3 =" +punt3)
+    alert( "punt4 =" +punt4)
+    alert( "punt5 =" +punt5)
+    alert( "punt6 =" +punt6)
+    alert( "punt7 =" +punt7)
+    alert( "punt8 =" +punt8)
+    alert( "punt9 =" +punt9)
+}
+
+</script>
+</html>
